@@ -15,10 +15,10 @@ func main() {
 
 	ans := 0
 	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			for k := 0; k < n; k++ {
-				for l := 0; l < n; l++ {
-					for m := 0; m < n; m++ {
+		for j := i + 1; j < n; j++ {
+			for k := j + 1; k < n; k++ {
+				for l := k + 1; l < n; l++ {
+					for m := l + 1; m < n; m++ {
 						res := equalQ(a[i], a[j], a[k], a[l], a[m], p, q)
 						if res {
 							ans++
