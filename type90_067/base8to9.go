@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"strings"
 )
 
 func main() {
@@ -12,14 +13,8 @@ func main() {
 
 	for i := 0; i < k; i++ {
 		eight, _ := strconv.ParseInt(n, 8, 64)
-		nine := []byte(strconv.FormatInt(eight, 9))
-
-		for j := range nine {
-			if nine[j] == '8' {
-				nine[j] = '5'
-			}
-		}
-		n = string(nine)
+		nine := strconv.FormatInt(eight, 9)
+		n = strings.Replace(nine, "8", "5", -1)
 	}
 	fmt.Println(n)
 }
